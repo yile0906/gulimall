@@ -38,6 +38,17 @@ import com.atguigu.common.utils.R;
  *  4.nacos  Data ID：默认为：引用名.properties 例子：gulimall-coupon.properties
  *  5.bootstrap.properties和配置中心同时存在时，优先会选择配置中心的配置
  *      注：***spring.application.name需要配置在bootstrap.properties中
+ *  6.配置中心-名称空间、组
+ *      #配置中心-命名空间
+ *      #spring.cloud.nacos.config.namespace=59d57fa2-1de6-432b-94db-3489972c940d
+ *      #配置中心-组
+ *      #spring.cloud.nacos.config.group=dev
+ *  7.多配置源
+ *      #spring.cloud.nacos.config.ext-config[0].data-id=gulimall-datasource.yml
+ *      #spring.cloud.nacos.config.ext-config[1].group=dev
+ *      #动态刷新
+ *      #spring.cloud.nacos.config.ext-config[2].refresh=true
+ *
  */
 @RefreshScope
 @RestController
