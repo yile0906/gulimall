@@ -37,6 +37,7 @@ import com.atguigu.common.utils.R;
  *  3.在Controller上加上注解@RefreshScope 属性值上@Value
  *  4.nacos  Data ID：默认为：引用名.properties 例子：gulimall-coupon.properties
  *  5.bootstrap.properties和配置中心同时存在时，优先会选择配置中心的配置
+ *      注：***spring.application.name需要配置在bootstrap.properties中
  */
 @RefreshScope
 @RestController
