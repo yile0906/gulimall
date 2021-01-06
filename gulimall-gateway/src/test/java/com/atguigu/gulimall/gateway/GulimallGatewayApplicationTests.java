@@ -1,4 +1,4 @@
-package com.atguigu.gulimall.lgateway;
+package com.atguigu.gulimall.gateway;
 
 
 import org.junit.Test;
