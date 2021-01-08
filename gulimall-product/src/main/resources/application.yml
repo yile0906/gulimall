@@ -15,5 +15,7 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: auto
+  configuration:
+    database-id:
 server:
   port: 9000

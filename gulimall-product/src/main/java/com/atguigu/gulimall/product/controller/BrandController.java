@@ -1,9 +1,14 @@
 package com.atguigu.gulimall.product.controller;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.bind.BindResult;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +20,7 @@ import com.atguigu.gulimall.product.service.BrandService;
 import com.atguigu.common.utils.PageUtils;
 import com.atguigu.common.utils.R;
 
+import javax.validation.Valid;
 
 
 /**
@@ -55,7 +61,19 @@ public class BrandController {
      * 保存
      */
     @RequestMapping("/save")
-    public R save(@RequestBody BrandEntity brand){
+    public R save(@Valid @RequestBody BrandEntity brand/*, BindingResult bindResult*/){
+        //单个处理异常方法：BindingResult
+//        if(bindResult.hasErrors()){
+//            HashMap<Object, Object> errors = new HashMap<>();
+//            List<FieldError> fieldErrors = bindResult.getFieldErrors();
+//            fieldErrors.forEach((item)->{
+//                String field = item.getField();
+//                String message = item.getDefaultMessage();
+//                errors.put(field,message);
+//            });
+//
+//            return R.error(400,"数据格式错误").put("data",errors);
+//        }
 		brandService.save(brand);
 
         return R.ok();

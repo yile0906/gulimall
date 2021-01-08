@@ -1,11 +1,14 @@
 package com.atguigu.gulimall.product.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * 品牌
@@ -22,15 +25,17 @@ public class BrandEntity implements Serializable {
 	/**
 	 * 品牌id
 	 */
-	@TableId
+	@TableId(type= IdType.AUTO)
 	private Long brandId;
 	/**
 	 * 品牌名
 	 */
+	@NotNull(message = "品牌名不能为空")
 	private String name;
 	/**
 	 * 品牌logo地址
 	 */
+	@NotEmpty(message = "品牌logo地址必填")
 	private String logo;
 	/**
 	 * 介绍
